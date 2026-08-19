@@ -1,19 +1,38 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
 .venv/
 __pycache__/
-*.pyc
-
-.env
-
-data/*.db
-
-uploads/
-
+*.py[cod]
 .pytest_cache/
+*.pyo
 
+# Node
 node_modules/
 dist/
-test_resume.docx
+
+# TypeScript
 *.tsbuildinfo
 
+# Local database
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Uploaded files
+uploads/
+
+# Test/local files
+test_resume.docx
+
+# OS/editor
+.DS_Store
+Thumbs.db
 .vscode/
 .idea/
+
+.env.production
