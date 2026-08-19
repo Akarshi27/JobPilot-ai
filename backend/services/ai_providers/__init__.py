@@ -1,6 +1,8 @@
 import os
 from typing import Optional
+from dotenv import load_dotenv
 
+load_dotenv()
 from backend.services.ai_providers.base import BaseAIProvider
 from backend.services.ai_providers.gemini_provider import GeminiProvider
 from backend.services.ai_providers.ollama_provider import OllamaProvider
