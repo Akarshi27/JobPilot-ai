@@ -23,7 +23,7 @@ app = FastAPI(
 )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["https://jobpilot-ai-frontend.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -68,4 +68,4 @@ def ai_health():
     return {
         "provider": provider.provider_name,
         "available": provider.is_available()
-    }
+    }
