@@ -4,7 +4,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useNavigate,
 import { BriefcaseBusiness, FileText, LayoutDashboard, LogOut, Search, Settings, Sparkles, UserRound, Upload, ArrowRight, CheckCircle2, ClipboardList } from "lucide-react";
 import "./styles.css";
 
-const API = "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
 type User = { id: number; name: string; email: string };
 type Job = { id: number; title: string; company: string; location?: string; source: string; source_url?: string; job_url?: string; url?: string; is_demo?: boolean; match_percentage: number; matched_skills: string[]; missing_skills: string[]; why_match: string; why_not_perfect: string; eligible_for_application: boolean };
 type ResumeState = { state: string; has_resume: boolean; has_completed_analysis: boolean; analysis_status?: string | null; analysis_error?: string | null };
