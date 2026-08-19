@@ -2,6 +2,7 @@ import os
 from typing import Optional
 
 from backend.services.ai_providers.base import BaseAIProvider
+from backend.services.ai_providers.gemini_provider import GeminiProvider
 from backend.services.ai_providers.ollama_provider import OllamaProvider
 from backend.services.ai_providers.openai_provider import OpenAIProvider
 
@@ -14,12 +15,14 @@ def get_ai_provider() -> BaseAIProvider:
         return _provider_instance
 
     provider_name = os.getenv("AI_PROVIDER", "ollama").lower()
-    
+
     if provider_name == "openai":
         _provider_instance = OpenAIProvider()
     elif provider_name == "ollama":
         _provider_instance = OllamaProvider()
+    elif provider_name == "gemini":
+        _provider_instance = GeminiProvider()
     else:
-        raise ValueError(f"Unknown AI_PROVIDER: {provider_name}")
-        
+        raise RuntimeError(f"Unknown AI_PROVIDER: {provider_name}")
+
     return _provider_instance
