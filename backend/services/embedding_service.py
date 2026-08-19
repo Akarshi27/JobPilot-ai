@@ -1,15 +1,9 @@
 import hashlib
 import math
-import os
 import re
+from functools import lru_cache
 
-import requests
-
-
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-EMBEDDING_MODEL = os.getenv("OLLAMA_EMBEDDING_MODEL", "nomic-embed-text")
-
-_ollama_available = True
+from backend.services.ai_providers import get_ai_provider
 
 
 def _fallback_embedding(text: str, dimensions: int = 256) -> list[float]:
@@ -26,27 +20,13 @@ def _fallback_embedding(text: str, dimensions: int = 256) -> list[float]:
     return [value / norm for value in vector]
 
 
-from functools import lru_cache
-
 @lru_cache(maxsize=2000)
 def embed_text(text: str) -> list[float]:
-    global _ollama_available
-    if _ollama_available:
-        try:
-            response = requests.post(
-                f"{OLLAMA_URL}/api/embeddings",
-                json={"model": EMBEDDING_MODEL, "prompt": text},
-                timeout=1,
-            )
-            response.raise_for_status()
-            embedding = response.json().get("embedding")
-            if embedding:
-                return embedding
-        except requests.exceptions.ConnectionError:
-            _ollama_available = False
-        except (requests.RequestException, ValueError, TypeError):
-            pass
-    return _fallback_embedding(text)
+    provider = get_ai_provider()
+    try:
+        return provider.embed_text(text)
+    except Exception:
+        return _fallback_embedding(text)
 
 
 def similarity(left: list[float], right: list[float]) -> float:

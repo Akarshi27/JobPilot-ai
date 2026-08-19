@@ -59,3 +59,13 @@ def health():
     return {
         "status": "healthy"
     }
+
+
+@app.get("/health/ai")
+def ai_health():
+    from backend.services.ai_providers import get_ai_provider
+    provider = get_ai_provider()
+    return {
+        "provider": provider.provider_name,
+        "available": provider.is_available()
+    }
