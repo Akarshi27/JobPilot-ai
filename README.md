@@ -1,6 +1,15 @@
-# 🚀 JobPilot AI
+ # 🚀 JobPilot AI
 
-> **AI-powered job discovery and career intelligence platform that helps candidates discover relevant jobs, understand their fit, identify skill gaps, and manage their job-search workflow from a single platform.**
+> AI-powered job discovery and career intelligence platform that helps candidates discover relevant jobs, understand their fit, identify skill gaps, and manage their job-search workflow from a single platform.
+
+## 🌐 Live Demo
+
+| Service | Link |
+|---|---|
+| 🖥️ Frontend | https://jobpilot-ai-frontend.onrender.com |
+| ⚡ Backend API | https://jobpilot-ai-fqi4.onrender.com |
+| 📚 Swagger Docs | https://jobpilot-ai-fqi4.onrender.com/docs |
+| 📖 ReDoc | https://jobpilot-ai-fqi4.onrender.com/redoc |
 
 JobPilot AI is a full-stack career intelligence platform designed to reduce the manual effort involved in finding and applying for jobs.
 
