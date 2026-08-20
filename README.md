@@ -1,3 +1,13 @@
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC)
+![Deployment](https://img.shields.io/badge/deployed-Render-46E3B7)
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success)](https://jobpilot-ai-frontend.onrender.com)
+[![API Docs](https://img.shields.io/badge/API-Swagger-orange)](https://jobpilot-ai-fqi4.onrender.com/docs)
  # 🚀 JobPilot AI
 
 > AI-powered job discovery and career intelligence platform that helps candidates discover relevant jobs, understand their fit, identify skill gaps, and manage their job-search workflow from a single platform.
